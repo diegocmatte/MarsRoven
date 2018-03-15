@@ -16,6 +16,13 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Rover rover = new Rover();
+        rover.setPosicao(1, 2, 1);
+        rover.processaComando("LMLMLMLMM");
+        rover.mostraPosicao();//  1 3 N
+        rover.setPosicao(3, 3, 2);
+        rover.processaComando("MMRMMRMRRM");
+        rover.mostraPosicao(); // 5 1 L
     }
-    
+
 }
