@@ -51,14 +51,35 @@ public class Rover {
         System.out.println(x + " " + y + " " + direcao);
 
     }
-    
-    public void processaComando(String comandos){
+
+    public char getPosicao() {
+        char direcao = 'N';
+        switch (olhandoPara) {
+            case 1:
+                direcao = 'N';
+                break;
+            case 2:
+                direcao = 'L';
+                break;
+            case 3:
+                direcao = 'S';
+                break;
+            case 4:
+                direcao = 'O';
+                break;
+            default:
+                break;
+        }
+        return direcao;
+    }
+
+    public void processaComando(String comandos) {
         for (int i = 0; i < comandos.length(); i++) {
             processaComando(comandos.charAt(i));
         }
     }
-    
-    public void processaComando(Character comando){
+
+    public void processaComando(Character comando) {
         switch (comando) {
             case 'L':
                 virarEsquerda();
