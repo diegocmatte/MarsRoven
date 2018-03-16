@@ -20,15 +20,27 @@ public class Rover {
     private int y = 0;
     private int olhandoPara = NORTE;
 
+    /**
+     * Construtor da classe Rover
+     */
     public Rover() {
     }
 
+    /**
+     * Método que aponta uma nova posição do rover
+     * @param x
+     * @param y
+     * @param olhandoPara
+     */
     public void setPosicao(int x, int y, int olhandoPara) {
         this.x = x;
         this.y = y;
         this.olhandoPara = olhandoPara;
     }
 
+    /**
+     * Método que mostra a para qual lado o rover está olhando
+     */
     public void mostraPosicao() {
         char direcao = 'N';
         switch (olhandoPara) {
@@ -52,6 +64,10 @@ public class Rover {
 
     }
 
+    /**
+     * Método que devolve a posição para o qual o rover está olhando
+     * @return direcao
+     */
     public char getPosicao() {
         char direcao = 'N';
         switch (olhandoPara) {
@@ -73,12 +89,20 @@ public class Rover {
         return direcao;
     }
 
+    /**
+     * Método que recebe uma String que irá realizar as movimentação e apontamento do rover
+     * @param comandos
+     */
     public void processaComando(String comandos) {
         for (int i = 0; i < comandos.length(); i++) {
             processaComando(comandos.charAt(i));
         }
     }
 
+    /**
+     * Método que altera a posição do rover conforme char informado
+     * @param comando
+     */
     public void processaComando(Character comando) {
         switch (comando) {
             case 'L':
@@ -95,6 +119,9 @@ public class Rover {
         }
     }
 
+    /**
+     * Método que faz com que o rover gire sem mudar de posição
+     */
     private void mover() {
         switch (olhandoPara) {
             case NORTE:
@@ -114,10 +141,16 @@ public class Rover {
         }
     }
 
+    /**
+     * Método que faz com que o rover vire para a esquerda
+     */
     private void virarEsquerda() {
         olhandoPara = (olhandoPara - 1) < NORTE ? OESTE : olhandoPara - 1;
     }
 
+    /**
+     * Método que faz com que o rover vire para a direita
+     */
     private void virarDireita() {
         olhandoPara = (olhandoPara + 1) > OESTE ? NORTE : olhandoPara + 1;
     }
