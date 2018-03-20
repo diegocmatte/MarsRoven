@@ -11,14 +11,14 @@ package marsrover;
  */
 public class Rover {
 
-    private static final int NORTE = 1;
-    private static final int LESTE = 2;
-    private static final int SUL = 3;
-    private static final int OESTE = 4;
+    private static final int NORTH = 1;
+    private static final int EAST = 2;
+    private static final int SOUTH = 3;
+    private static final int WEST = 4;
 
     private int x = 0;
     private int y = 0;
-    private int olhandoPara = NORTE;
+    private int olhandoPara = NORTH;
 
     /**
      * Construtor da classe Rover
@@ -48,13 +48,13 @@ public class Rover {
                 direcao = 'N';
                 break;
             case 2:
-                direcao = 'L';
+                direcao = 'E';
                 break;
             case 3:
                 direcao = 'S';
                 break;
             case 4:
-                direcao = 'O';
+                direcao = 'W';
                 break;
             default:
                 break;
@@ -75,13 +75,13 @@ public class Rover {
                 direcao = 'N';
                 break;
             case 2:
-                direcao = 'L';
+                direcao = 'E';
                 break;
             case 3:
                 direcao = 'S';
                 break;
             case 4:
-                direcao = 'O';
+                direcao = 'W';
                 break;
             default:
                 break;
@@ -124,16 +124,16 @@ public class Rover {
      */
     private void mover() {
         switch (olhandoPara) {
-            case NORTE:
+            case NORTH:
                 this.y++;
                 break;
-            case LESTE:
+            case EAST:
                 this.x++;
                 break;
-            case SUL:
+            case SOUTH:
                 this.y--;
                 break;
-            case OESTE:
+            case WEST:
                 this.x--;
                 break;
             default:
@@ -145,14 +145,14 @@ public class Rover {
      * Método que faz com que o rover vire para a esquerda
      */
     private void virarEsquerda() {
-        olhandoPara = (olhandoPara - 1) < NORTE ? OESTE : olhandoPara - 1;
+        olhandoPara = (olhandoPara - 1) < NORTH ? WEST : olhandoPara - 1;
     }
 
     /**
      * Método que faz com que o rover vire para a direita
      */
     private void virarDireita() {
-        olhandoPara = (olhandoPara + 1) > OESTE ? NORTE : olhandoPara + 1;
+        olhandoPara = (olhandoPara + 1) > WEST ? NORTH : olhandoPara + 1;
     }
 
 }
