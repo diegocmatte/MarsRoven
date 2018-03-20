@@ -100,7 +100,7 @@ public class Rover {
     }
 
     /**
-     * Método que altera a posição do rover conforme char informado
+     * Método que altera a posição do rover conforme char informado. L = left; R = right; M = move
      * @param comando
      */
     public void processaComando(Character comando) {
@@ -120,7 +120,7 @@ public class Rover {
     }
 
     /**
-     * Método que faz com que o rover gire sem mudar de posição
+     * Método que faz com que o rover gire sem mudar de posição x,y
      */
     private void mover() {
         switch (olhandoPara) {
