@@ -28,6 +28,7 @@ public class Rover {
 
     /**
      * Método que aponta uma nova posição do rover
+     *
      * @param x
      * @param y
      * @param olhandoPara
@@ -66,6 +67,7 @@ public class Rover {
 
     /**
      * Método que devolve a posição para o qual o rover está olhando
+     *
      * @return direcao
      */
     public char getPosicao() {
@@ -90,7 +92,9 @@ public class Rover {
     }
 
     /**
-     * Método que recebe uma String que irá realizar as movimentação e apontamento do rover
+     * Método que recebe uma String que irá realizar as movimentação e
+     * apontamento do rover
+     *
      * @param comandos
      */
     public void processaComando(String comandos) {
@@ -100,7 +104,10 @@ public class Rover {
     }
 
     /**
-     * Método que altera a posição do rover conforme char informado. L = left; R = right; M = move
+     * Método que altera a posição do rover conforme char informado e 
+     * lança uma exceçâo caso seja uma letra diferente. L = left; R
+     * = right; M = move
+     *
      * @param comando
      */
     public void processaComando(Character comando) {
@@ -115,27 +122,44 @@ public class Rover {
                 mover();
                 break;
             default:
-                break;
+                throw new IllegalArgumentException();
+                //break;
         }
     }
 
     /**
      * Método que faz com que o rover gire sem mudar de posição x,y
+     * e lança uma exceção se X e Y > 5 e/ou < 0
      */
     private void mover() {
         switch (olhandoPara) {
             case NORTH:
-                this.y++;
+                if (this.y < 5) {
+                    this.y++;
+                } else {
+                    throw new IndexOutOfBoundsException();
+                }
                 break;
             case EAST:
-                this.x++;
+                if (this.x < 5) {
+                    this.x++;
+                } else {
+                    throw new IndexOutOfBoundsException();
+                }
                 break;
             case SOUTH:
-                this.y--;
+                if (this.y > 0) {
+                    this.y--;
+                } else {
+                    throw new IndexOutOfBoundsException();
+                }
                 break;
             case WEST:
-                this.x--;
-                break;
+                if (this.x > 0) {
+                    this.x--;
+                } else {
+                    throw new IndexOutOfBoundsException();
+                }
             default:
                 break;
         }
