@@ -104,9 +104,8 @@ public class Rover {
     }
 
     /**
-     * Método que altera a posição do rover conforme char informado e 
-     * lança uma exceçâo caso seja uma letra diferente. L = left; R
-     * = right; M = move
+     * Método que altera a posição do rover conforme char informado e lança uma
+     * exceçâo caso seja uma letra diferente. L = left; R = right; M = move
      *
      * @param comando
      */
@@ -123,13 +122,13 @@ public class Rover {
                 break;
             default:
                 throw new IllegalArgumentException();
-                //break;
+            //break;
         }
     }
 
     /**
-     * Método que faz com que o rover gire sem mudar de posição x,y
-     * e lança uma exceção se X e Y > 5 e/ou < 0
+     * Método que faz com que o rover gire sem mudar de posição x,y e lança uma
+     * exceção se X e Y > 5 e/ou < 0
      */
     private void mover() {
         switch (olhandoPara) {
