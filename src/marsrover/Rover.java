@@ -160,7 +160,7 @@ public class Rover {
                     throw new IndexOutOfBoundsException();
                 }
             default:
-                break;
+                throw new IllegalArgumentException();
         }
     }
 
